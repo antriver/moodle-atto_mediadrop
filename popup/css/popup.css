@@ -1,0 +1,391 @@
+body {
+    background: #FFF;
+    margin: 0;
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:subpixel-antialiased;
+    text-rendering:optimizeLegibility; font-size:13px;
+    color:#494949;
+}
+
+.searchreset {
+    display: block;
+    float: right;
+}
+
+header {
+    background:url(../images/header.png) repeat-x top center;
+    clear: both;
+    height:27px;
+    left: 0;
+    position:relative;
+    top: 0;
+    z-index:2;
+    padding:10px 15px;
+}
+
+.mdrop-pagination {
+    float:right;
+}
+
+header .mdrop-btn {
+    height:28px;
+    display:inline-block;
+    background:url(../images/header-btn-left.png) no-repeat top left;
+    padding-left:4px;
+    text-indent: -9999px;
+    direction: ltr;
+}
+
+header .mdrop-btn span {
+    background:url(../images/header-btn-right.png) no-repeat top right;
+    height:28px;
+    display:block;
+    padding:0 12px 0 8px;
+}
+
+.mdrop-pagination .mdrop-prev {
+    background:url(../images/pagination.png) no-repeat top left;
+    width:31px;
+    height:28px;
+    cursor:pointer;
+    margin:0;
+    padding:0;
+}
+
+.mdrop-pagination .mdrop-next {
+    background:url(../images/pagination.png) no-repeat top right;
+    width:30px;
+    height:28px;
+    cursor:pointer;
+    margin:0 0 0 -4px;
+    padding:0;
+}
+
+.mdrop-pagination .mdrop-next.mdrop-disabled {
+    background-position:100% -84px;
+    cursor:default;
+    pointer-events: none;
+}
+
+.mdrop-pagination .mdrop-prev.mdrop-disabled {
+    background-position:0 -84px;
+    cursor:default;
+}
+
+.mdrop-title {
+    font-size:18px;
+    font-weight:500;
+    color:#3c4d5a;
+    text-shadow:0 1px 0 #FFF;
+    padding-top:4px;
+}
+
+.mdrop-close {
+    cursor:pointer;
+}
+
+.mdrop-search-form {
+    background:url(../images/search-bg.png) repeat-x top;
+    height:29px;
+    position:relative;
+    margin:-1px 0 0;
+    padding:9px 15px;
+}
+
+.mdrop-search-input {
+    background:#fff url(../images/magnify-glass.png) no-repeat 12px 5px;
+    border-radius:15px;
+    float: left;
+    font-size:14px;
+    font-weight:300;
+    height:27px;
+    line-height:25px;
+    border:1px solid #8e9197;
+    box-shadow:0 1px 0 #fff,inset 0 1px 0 #d5d5d5;
+    width:89%;
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    padding:0 10px 0 35px;
+}
+
+.mdrop-clear-search {
+    display: block;
+    width:18px;
+    height:18px;
+    position:absolute;
+    top:15px;
+    right:24px;
+    background:url(../images/clear-search.png) no-repeat 0 0;
+    cursor:pointer;
+    text-indent: -9990px;
+    direction: ltr;
+}
+
+.mdrop-content {
+    background:#fff;
+    clear: both;
+    float:left;
+    width:100%;
+    overflow-y:scroll;
+    padding-bottom:35px; /* Height of footer */
+}
+
+.mdrop-message {
+    margin: 40px auto 0 auto;
+    text-align: center;
+    width: 250px;
+}
+
+    .mdrop-message h2 {
+        text-align:center;
+        font-size:25px;
+        color:#a3abb8;
+        line-height:25px;
+        margin-bottom:10px;
+    }
+
+    .mdrop-message p {
+        text-align:center;
+        font-size:15px;
+        color:#afb6c3;
+        font-weight:300;
+    }
+
+#mdrop-embed.zero-state .mdrop-content {
+    background:#fff url(../images/zero-state.png) no-repeat center 85px;
+}
+
+#mdrop-embed.connection-error .mdrop-content {
+    background:#fff url(../images/error.png) no-repeat center 85px;
+}
+
+#mdrop-embed.zero-state .mdrop-message,
+#mdrop-embed.connection-error .mdrop-message {
+    display:block;
+}
+
+.mdrop-loading {
+    position:absolute;
+    top:50%;
+    width:80px;
+    height:80px;
+    left:50%;
+    display:none;
+    background:url(../images/spinner.gif) no-repeat center;
+    margin:-40px 0 0 -40px;
+}
+
+.mdrop-media {
+    height:56px;
+    border-bottom:1px solid #e8e8e8;
+    padding:12px 15px;
+}
+    .mdrop-media a {
+        border: 0 !important;
+        color:#3e8ae5;
+        display: block;
+        text-decoration: none;
+    }
+    .mdrop-media a img {
+        border: 0 !important;
+    }
+    .mdrop-media .mdrop-thumbnail {
+        border: 0;
+        float:left;
+        margin-right:15px;
+        position:relative;
+        cursor:pointer;
+        height:56px;
+        width:100px;
+    }
+
+    .mdrop-media .mdrop-thumbnail img {
+        width:100px;
+        height:56px;
+    }
+
+    .mdrop-media .mdrop-thumbnail .mdrop-border {
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        border:1px solid rgba(0,0,0,0.4);
+    }
+
+    .mdrop-media .mdrop-thumbnail .mdrop-overlay {
+        position:absolute;
+        bottom:0;
+        left:0;
+        right:0;
+        height:15px;
+        background:rgba(0,0,0,0.55);
+        border-top:1px solid rgba(0,0,0,0.4);
+    }
+
+    .mdrop-media .mdrop-overlay .mdrop-icon {
+        position:absolute;
+        width:17px;
+        height:12px;
+        background:url(../images/video-icon.png) no-repeat center;
+        left:5px;
+        top:1px;
+    }
+
+    .mdrop-audio .mdrop-overlay .mdrop-icon {
+        background:url(../images/audio-icon.png) no-repeat center;
+    }
+
+    .mdrop-media .mdrop-length {
+        position:absolute;
+        color:#FFF;
+        line-height: 14px;
+        text-shadow:0 1px .9px #000;
+        font-size:11px;
+        font-weight:400;
+        right:5px;
+        top:0;
+    }
+
+    .mdrop-media .mdrop-info {
+        float:left;
+        width:190px;
+        margin-right:20px;
+    }
+
+    .mdrop-media .mdrop-info h3 {
+        width:210px;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        color:#3e8ae5;
+        font-size:17px;
+        line-height:24px;
+        cursor:pointer;
+        margin:6px 0 5px;
+    }
+
+    .mdrop-media .mdrop-info .mdrop-date {
+        color:#858d9e;
+        font-size:13px;
+    }
+
+    .mdrop-media .mdrop-add-btn {
+        height:23px;
+        background:url(../images/add-btn-l.png) no-repeat 0 0;
+        display:inline-block;
+        cursor:pointer;
+        margin-top:10px;
+    }
+
+    .mdrop-media .mdrop-add-btn a {
+        display: block;
+        margin-left:4px;
+        height:23px;
+        background:url(../images/add-btn-r.png) no-repeat top right;
+        line-height:23px;
+        padding:0 10px 0 4px;
+    }
+
+    .mdrop-media .mdrop-add-btn a {
+        color: #444;
+        text-decoration: none;
+    }
+
+    .mdrop-media .mdrop-add-btn .mdrop-icon {
+        display: inline-block;
+        height:8px;
+        width:10px;
+        background:url(../images/add-icon.png) no-repeat center;
+        margin:0;
+        padding:0;
+    }
+
+    .mdrop-media .mdrop-add-btn:active .mdrop-icon {
+        background-position:center center;
+    }
+
+    footer {
+        background:url(../images/footer-bg.png) repeat-x top;
+        height:35px;
+        -webkit-border-radius:0 0 5px 5px;
+        -moz-border-radius:0 0 5px 5px;
+        border-radius:0 0 5px 5px;
+        float:left;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width:100%;
+        text-align:center;
+        line-height:35px;
+        text-shadow:0 1px 0 #FFF;
+        z-index:2;
+    }
+
+    .mdrop-media.clicked .mdrop-thumbnail,
+    .mdrop-media.clicked .mdrop-info h3,
+    .mdrop-media.clicked .mdrop-add-btn {
+        cursor:default;
+    }
+
+    .mdrop-media.clicked .mdrop-add-btn .mdrop-icon {
+        background-position:center center;
+        opacity:.7;
+    }
+
+    .mdrop-media .mdrop-add {
+        float:right;
+        position: relative;
+        z-index: 1;
+    }
+
+.mdrop-clearfix:after {
+    content:'';
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+
+.mdrop-clearfix {
+    height:1%;
+}
+
+:first-child+html .mdrop-clearfix {
+    display:inline-block;
+}
+
+
+
+header .mdrop-btn:hover,
+header .mdrop-pagination .mdrop-prev:hover {
+    background-position:0 -28px;
+}
+
+header .mdrop-pagination .mdrop-disabled:hover {
+    background-position:0 -84px;
+}
+
+header .mdrop-btn:hover span,
+header .mdrop-pagination .mdrop-next:hover {
+    background-position:100% -28px;
+}
+
+header .mdrop-btn:active,
+header .mdrop-pagination .mdrop-prev:active {
+    background-position:0 -56px;
+}
+
+header .mdrop-btn:active span,
+header .mdrop-pagination .mdrop-next:active {
+    background-position:100% -56px;
+}
+
+.mdrop-media .mdrop-add-btn:active,
+.mdrop-media.clicked .mdrop-add-btn {
+    background-position:0 -23px;
+}
+
+.mdrop-media .mdrop-add-btn:active span,
+.mdrop-media.clicked .mdrop-add-btn span {
+    background-position:100% -23px;
+}

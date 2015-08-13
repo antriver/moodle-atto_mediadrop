@@ -1,0 +1,10 @@
+{
+    "name": "moodle-atto_mediadrop-button",
+    "builds": {
+        "moodle-atto_mediadrop-button": {
+            "jsfiles": [
+                "button.js"
+            ]
+        }
+    }
+}
