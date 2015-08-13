@@ -25,6 +25,6 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'atto_mediadrop';
-$plugin->version = 2015081303;
+$plugin->version = 2015081304;
 $plugin->requires = 2013111800; // MOODLE_26_STABLE
 $plugin->maturity = MATURITY_STABLE;

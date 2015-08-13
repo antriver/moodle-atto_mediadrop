@@ -110,8 +110,9 @@ $nexturl = ($currentpage >= $totalpages) ? false : "?page=" . ($currentpage + 1 
 
         $embeddableurl = s($mediadrop->get_embeddable_url($video->url));
 
-        $safetitle = str_replace('"', '', s($video->title));
+        $safetitle = str_replace('"', '', $video->title);
         $safetitle = str_replace("'", '', $safetitle);
+        $safetitle = s($safetitle);
 
         $onclick = "insertVideo('{$embeddableurl}', '{$safetitle}');";
 
