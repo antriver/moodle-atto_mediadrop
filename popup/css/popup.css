@@ -180,13 +180,13 @@ header .mdrop-btn span {
     padding:12px 15px;
 }
     .mdrop-media a {
-        border: 0 !important;
+        border: 0;
         color:#3e8ae5;
         display: block;
         text-decoration: none;
     }
     .mdrop-media a img {
-        border: 0 !important;
+        border: 0;
     }
     .mdrop-media .mdrop-thumbnail {
         border: 0;
