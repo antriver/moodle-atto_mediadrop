@@ -26,6 +26,8 @@
 
 namespace atto_mediadrop\local;
 
+use moodle_exception;
+
 /**
  * Utilities for atto_mediadrop plugin.
  *
@@ -61,11 +63,14 @@ class mediadrop
     /**
      * Constructor.
      *
-     * @return null
+     * @throws moodle_exception
      */
     public function __construct() {
 
         $this->url = rtrim($this->get_config('mediadropurl'), '/');
+        if (empty($this->url)) {
+            throw new moodle_exception($this->get_string('nourl'));
+        }
     }
 
     /**

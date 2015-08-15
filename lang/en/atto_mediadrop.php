@@ -32,6 +32,7 @@ $string['pluginname'] = 'MediaDrop chooser';
 $string['popuptitle'] = 'Media Chooser';
 $string['nomedia'] = 'No media found';
 $string['nomediadesc'] = 'Either you have no media in your MediaDrop library, or your search returned no results.';
+$string['nourl'] = 'Please set the URL of your MediaDrop site in the plugin settings.';
 
 /**
  * Settings
