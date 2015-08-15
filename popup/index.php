@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Display the media chooser.
+ *
  * @package    atto_mediadrop
  * @copyright  2015 Anthony Kuske <www.anthonykuske.com>
  *             Based on tinymce mediacoreinsert plugin https://github.com/mediacore/mediacore-moodle/tree/fe40bf8df4
@@ -26,10 +28,10 @@ require(__DIR__ . '/../../../../../../config.php');
 
 $mediadrop = new \atto_mediadrop\local\mediadrop();
 
-// Get parameters
+// Get parameters.
 $currentpage = optional_param('page', 1, PARAM_INT);
 $searchquery = optional_param('search', '', PARAM_RAW);
-$elementid = optional_param('elementid', '', PARAM_TEXT); // The editor in the parent window
+$elementid = optional_param('elementid', '', PARAM_TEXT); // The editor in the parent window.
 
 $offset = ($currentpage - 1) * $mediadrop->videosperpage;
 
@@ -160,7 +162,7 @@ $nexturl = ($currentpage >= $totalpages) ? false : "?page=" . ($currentpage + 1 
         </div> <!-- end .mdrop-media -->
 
         <?php
-    } // end foreach
+    } // End foreach video.
     ?>
 
 </div> <!-- end .mdrop-content -->

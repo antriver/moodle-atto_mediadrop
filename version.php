@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Plugin version.
+ *
  * @package    atto_mediadrop
  * @copyright  2015 Anthony Kuske <www.anthonykuske.com>
  *             Based on tinymce mediacoreinsert plugin https://github.com/mediacore/mediacore-moodle/tree/fe40bf8df4
@@ -26,6 +28,6 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'atto_mediadrop';
 $plugin->version = 2015081304;
-$plugin->requires = 2013111800; // MOODLE_26_STABLE
+$plugin->requires = 2013111800; // MOODLE_26_STABLE.
 $plugin->release = '1.0';
 $plugin->maturity = MATURITY_STABLE;

@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Utilities for atto_mediadrop plugin.
+ *
  * @package    atto_mediadrop
  * @copyright  2015 Anthony Kuske <www.anthonykuske.com>
  *             Based on tinymce mediacoreinsert plugin https://github.com/mediacore/mediacore-moodle/tree/fe40bf8df4
@@ -24,13 +26,43 @@
 
 namespace atto_mediadrop\local;
 
+/**
+ * Utilities for atto_mediadrop plugin.
+ *
+ * @package    atto_mediadrop
+ * @copyright  2015 Anthony Kuske <www.anthonykuske.com>
+ *             Based on tinymce mediacoreinsert plugin https://github.com/mediacore/mediacore-moodle/tree/fe40bf8df4
+ *             and atto_mediacore plugin https://github.com/mediacore/mediacore-moodle
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class mediadrop
 {
+    /**
+     * Number of videos show per page in the chooser.
+     *
+     * @var int
+     */
     public $videosperpage = 6;
 
+    /**
+     * URL to MediaDrop (loaded from config setting)/
+     *
+     * @var string
+     */
     private $url;
+
+    /**
+     * Name of the plugin.
+     *
+     * @var string
+     */
     private $pluginname = 'atto_mediadrop';
 
+    /**
+     * Constructor.
+     *
+     * @return null
+     */
     public function __construct() {
 
         $this->url = rtrim($this->get_config('mediadropurl'), '/');
@@ -108,34 +140,27 @@ class mediadrop
      */
     public function format_seconds($sec, $padhours = false) {
 
-        // start with a blank string
-        $hms = '';
+        $return = '';
 
-        // do the hours first: there are 3600 seconds in an hour, so if we divide
-        // the total number of seconds by 3600 and throw away the remainder, we're
-        // left with the number of hours in those seconds
-        $hours = intval(intval($sec) / 3600);
+        // Calculate how many hours there are (3600 seconds per hour).
+        $hours = floor($sec / 3600);
 
-        // add hours to $hms (with a leading 0 if asked for)
-        $hms .= $padhours ? str_pad($hours, 2, '0', STR_PAD_LEFT) . ':' : $hours . ':';
+        // Add hours to output with leading zero if requested.
+        $return .= $padhours ? str_pad($hours, 2, '0', STR_PAD_LEFT) . ':' : $hours . ':';
 
-        // dividing the total seconds by 60 will give us the number of minutes
-        // in total, but we're interested in *minutes past the hour* and to get
-        // this, we have to divide by 60 again and then use the remainder
-        $minutes = intval(($sec / 60) % 60);
+        // Calulate remaining full minutes after the full hours are accounted for.
+        $minutes = floor($sec / 60) % 60;
 
-        // add minutes to $hms (with a leading 0 if needed)
-        $hms .= str_pad($minutes, 2, '0', STR_PAD_LEFT). ':';
+        // Add minutes to output with leading zero.
+        $return .= str_pad($minutes, 2, '0', STR_PAD_LEFT). ':';
 
-        // seconds past the minute are found by dividing the total number of seconds
-        // by 60 and using the remainder
-        $seconds = intval($sec % 60);
+        // Remaining seconds.
+        $seconds = $sec % 60;
 
-        // add seconds to $hms (with a leading 0 if needed)
-        $hms .= str_pad($seconds, 2, '0', STR_PAD_LEFT);
+        // Add seconds to output with leading zero.
+        $return .= str_pad($seconds, 2, '0', STR_PAD_LEFT);
 
-        // done!
-        return $hms;
+        return $return;
     }
 
     /**

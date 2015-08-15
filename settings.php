@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Plugin settings.
+ *
  * @package    atto_mediadrop
  * @copyright  2015 Anthony Kuske <www.anthonykuske.com>
  *             Based on tinymce mediacoreinsert plugin https://github.com/mediacore/mediacore-moodle/tree/fe40bf8df4
