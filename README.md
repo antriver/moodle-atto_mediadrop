@@ -2,7 +2,9 @@
 
 Allows users to insert media from a MediaDrop platform (formerly known as "MediaCore Community Edition") into the Atto editor in Moodle.
 
+## Compatibility
 Tested with:
+
 * Moodle 2.9+ (Build: 20150521)
 * MediaDrop 0.11dev
 
