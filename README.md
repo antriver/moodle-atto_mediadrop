@@ -8,9 +8,9 @@ Tested with:
 * Moodle 2.9+ (Build: 20150521)
 * MediaDrop 0.11dev
 
-## Screenshot
+## Screenshots
 
-![](http://img.ctrlv.in/img/15/08/13/55cd1d31e5ae1.png)
+![](https://www.classroomtechtools.com/assets/img/moodle-plugin-screenshots/atto_mediadrop/1.png)
 
 ## Background
 
